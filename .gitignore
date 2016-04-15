@@ -14,3 +14,11 @@
 # Metadata
 *.aliases
 *.lvlps
+
+# tex docs
+
+Docs/Guide.aux
+Docs/Guide.log
+Docs/Guide.out
+Docs/Guide.synctex.gz
+Docs/Guide.toc

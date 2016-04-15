@@ -1,0 +1,50 @@
+<?xml version='1.0' standalone='yes' ?>
+<LVData xmlns="http://www.ni.com/LVData">
+<Version>13.0f2</Version>
+<Array>
+<Name>SEQs</Name>
+<Dimsize>2</Dimsize>
+<Cluster>
+<Name>Line</Name>
+<NumElts>2</NumElts>
+<Array>
+<Name>Var Array</Name>
+<Dimsize>1</Dimsize>
+<Dimsize>2</Dimsize>
+<String>
+<Name>String</Name>
+<Val>PAUSE</Val>
+</String>
+<String>
+<Name>String</Name>
+<Val>1000</Val>
+</String>
+</Array>
+<String>
+<Name>Comment</Name>
+<Val>This is an example.</Val>
+</String>
+</Cluster>
+<Cluster>
+<Name>Line</Name>
+<NumElts>2</NumElts>
+<Array>
+<Name>Var Array</Name>
+<Dimsize>1</Dimsize>
+<Dimsize>2</Dimsize>
+<String>
+<Name>String</Name>
+<Val>PAUSE</Val>
+</String>
+<String>
+<Name>String</Name>
+<Val>2000</Val>
+</String>
+</Array>
+<String>
+<Name>Comment</Name>
+<Val></Val>
+</String>
+</Cluster>
+</Array>
+</LVData>
