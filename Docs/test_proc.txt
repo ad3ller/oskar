@@ -18,5 +18,5 @@ download h5labview2-2.11.2.137.vip and install using VIPM
 # IVI scope
 Open NI_MAX
 	create driver session 'Tektronix tktds20xx' simulated by niScope
-		Add harware asseset 'notascope'
+		Add harware asset 'notascope'
 	create  Logical Name 'foo' with driver session 'bar'.

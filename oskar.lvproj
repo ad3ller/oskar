@@ -16,6 +16,7 @@
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="Acquisition" Type="Folder">
 			<Item Name="IVI_Oscilloscope.vi" Type="VI" URL="../Acquisition/IVI_Oscilloscope.vi"/>
+			<Item Name="Camera.vi" Type="VI" URL="../Acquisition/Camera.vi"/>
 		</Item>
 		<Item Name="Build Sequences" Type="Folder">
 			<Item Name="Append.vi" Type="VI" URL="../Build Sequences/Append.vi"/>
@@ -35,6 +36,9 @@
 		</Item>
 		<Item Name="Processing" Type="Folder">
 			<Item Name="rebin.vi" Type="VI" URL="../Processing/rebin.vi"/>
+			<Item Name="random_array.vi" Type="VI" URL="../Extensions/random_array.vi"/>
+			<Item Name="scope_stats.vi" Type="VI" URL="../Processing/scope_stats.vi"/>
+			<Item Name="statistics.ctl" Type="VI" URL="../Extensions/hdf5/statistics.ctl"/>
 		</Item>
 		<Item Name="REC" Type="Folder">
 			<Item Name="Examples" Type="Folder">
@@ -71,7 +75,6 @@
 			</Item>
 			<Item Name="Acquisition" Type="Folder">
 				<Item Name="IVI_chan.ctl" Type="VI" URL="../Acquisition/IVI_chan.ctl"/>
-				<Item Name="scope_stats.vi" Type="VI" URL="../Processing/scope_stats.vi"/>
 			</Item>
 			<Item Name="hdf5" Type="Folder">
 				<Item Name="h5_1D_DBL.vi" Type="VI" URL="../Extensions/hdf5/h5_1D_DBL.vi"/>
@@ -80,8 +83,7 @@
 				<Item Name="h5_2D_I16_stacking.vi" Type="VI" URL="../Extensions/hdf5/h5_2D_I16_stacking.vi"/>
 				<Item Name="dialogue.vi" Type="VI" URL="../Extensions/hdf5/dialogue.vi"/>
 				<Item Name="IVI_h5.vi" Type="VI" URL="../Processing/IVI_h5.vi"/>
-				<Item Name="h5_SSPALS.vi" Type="VI" URL="../Extensions/hdf5/h5_SSPALS.vi"/>
-				<Item Name="SSPALS.ctl" Type="VI" URL="../Extensions/hdf5/SSPALS.ctl"/>
+				<Item Name="h5_stats.vi" Type="VI" URL="../Extensions/hdf5/h5_stats.vi"/>
 			</Item>
 			<Item Name="skip_squid.vi" Type="VI" URL="../Tools/skip_squid.vi"/>
 		</Item>
@@ -209,12 +211,23 @@
 				<Item Name="IviScope Initiate Acquisition.vi" Type="VI" URL="/&lt;vilib&gt;/ivi/iviscope/_iviscope.llb/IviScope Initiate Acquisition.vi"/>
 				<Item Name="IviScope Fetch Waveform.vi" Type="VI" URL="/&lt;vilib&gt;/ivi/iviscope/_iviscope.llb/IviScope Fetch Waveform.vi"/>
 				<Item Name="IviScope Abort.vi" Type="VI" URL="/&lt;vilib&gt;/ivi/iviscope/_iviscope.llb/IviScope Abort.vi"/>
+				<Item Name="IMAQ Image.ctl" Type="VI" URL="/&lt;vilib&gt;/vision/Image Controls.llb/IMAQ Image.ctl"/>
+				<Item Name="IMAQ Dispose" Type="VI" URL="/&lt;vilib&gt;/vision/Basics.llb/IMAQ Dispose"/>
+				<Item Name="Image Type" Type="VI" URL="/&lt;vilib&gt;/vision/Image Controls.llb/Image Type"/>
+				<Item Name="IMAQ Create" Type="VI" URL="/&lt;vilib&gt;/vision/Basics.llb/IMAQ Create"/>
+				<Item Name="IMAQ ArrayToImage" Type="VI" URL="/&lt;vilib&gt;/vision/Basics.llb/IMAQ ArrayToImage"/>
 			</Item>
 			<Item Name="lvanlys.dll" Type="Document" URL="/&lt;resource&gt;/lvanlys.dll"/>
 			<Item Name="ivi.dll" Type="Document" URL="ivi.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="IviScope.dll" Type="Document" URL="IviScope.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
+			<Item Name="nivissvc.dll" Type="Document" URL="nivissvc.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
+			<Item Name="nivision.dll" Type="Document" URL="nivision.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 		</Item>
