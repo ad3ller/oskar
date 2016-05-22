@@ -15,8 +15,10 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="Acquisition" Type="Folder">
-			<Item Name="IVI_Oscilloscope.vi" Type="VI" URL="../Acquisition/IVI_Oscilloscope.vi"/>
-			<Item Name="Camera.vi" Type="VI" URL="../Acquisition/Camera.vi"/>
+			<Item Name="examples" Type="Folder">
+				<Item Name="fake_camera.vi" Type="VI" URL="../Acquisition/fake_camera.vi"/>
+				<Item Name="fake_scope.vi" Type="VI" URL="../Acquisition/fake_scope.vi"/>
+			</Item>
 		</Item>
 		<Item Name="Build Sequences" Type="Folder">
 			<Item Name="Append.vi" Type="VI" URL="../Build Sequences/Append.vi"/>
@@ -36,13 +38,11 @@
 		</Item>
 		<Item Name="Processing" Type="Folder">
 			<Item Name="rebin.vi" Type="VI" URL="../Processing/rebin.vi"/>
-			<Item Name="random_array.vi" Type="VI" URL="../Extensions/random_array.vi"/>
 			<Item Name="scope_stats.vi" Type="VI" URL="../Processing/scope_stats.vi"/>
-			<Item Name="statistics.ctl" Type="VI" URL="../Extensions/hdf5/statistics.ctl"/>
 		</Item>
 		<Item Name="REC" Type="Folder">
-			<Item Name="Examples" Type="Folder">
-				<Item Name="rec_random.vi" Type="VI" URL="../Hardware/rec_random.vi"/>
+			<Item Name="examples" Type="Folder">
+				<Item Name="RANDOM.vi" Type="VI" URL="../REC/RANDOM.vi"/>
 			</Item>
 		</Item>
 		<Item Name="Tools" Type="Folder">
@@ -55,7 +55,7 @@
 				<Item Name="date_path_h5.vi" Type="VI" URL="../Tools/date_path_h5.vi"/>
 				<Item Name="dtype.vi" Type="VI" URL="../Tools/dtype.vi"/>
 			</Item>
-			<Item Name="SEQs" Type="Folder">
+			<Item Name="SEQ" Type="Folder">
 				<Item Name="arr_intersperse.vi" Type="VI" URL="../Tools/arr_intersperse.vi"/>
 				<Item Name="build_seq.vi" Type="VI" URL="../Tools/build_seq.vi"/>
 				<Item Name="format_vars.vi" Type="VI" URL="../Tools/format_vars.vi"/>
@@ -74,25 +74,32 @@
 				<Item Name="vars.ctl" Type="VI" URL="../Tools/vars.ctl"/>
 			</Item>
 			<Item Name="Acquisition" Type="Folder">
-				<Item Name="IVI_chan.ctl" Type="VI" URL="../Acquisition/IVI_chan.ctl"/>
+				<Item Name="osc_channel.ctl" Type="VI" URL="../Acquisition/osc_channel.ctl"/>
+				<Item Name="statistics.ctl" Type="VI" URL="../Acquisition/statistics.ctl"/>
 			</Item>
 			<Item Name="hdf5" Type="Folder">
-				<Item Name="h5_1D_DBL.vi" Type="VI" URL="../Extensions/hdf5/h5_1D_DBL.vi"/>
-				<Item Name="h5_1D_SGL.vi" Type="VI" URL="../Extensions/hdf5/h5_1D_SGL.vi"/>
-				<Item Name="h5_2D_I16.vi" Type="VI" URL="../Extensions/hdf5/h5_2D_I16.vi"/>
-				<Item Name="h5_2D_I16_stacking.vi" Type="VI" URL="../Extensions/hdf5/h5_2D_I16_stacking.vi"/>
-				<Item Name="dialogue.vi" Type="VI" URL="../Extensions/hdf5/dialogue.vi"/>
-				<Item Name="IVI_h5.vi" Type="VI" URL="../Processing/IVI_h5.vi"/>
-				<Item Name="h5_stats.vi" Type="VI" URL="../Extensions/hdf5/h5_stats.vi"/>
+				<Item Name="h5_1D_DBL.vi" Type="VI" URL="../hdf5/h5_1D_DBL.vi"/>
+				<Item Name="h5_1D_SGL.vi" Type="VI" URL="../hdf5/h5_1D_SGL.vi"/>
+				<Item Name="h5_2D_I16.vi" Type="VI" URL="../hdf5/h5_2D_I16.vi"/>
+				<Item Name="h5_2D_I16_stacking.vi" Type="VI" URL="../hdf5/h5_2D_I16_stacking.vi"/>
+				<Item Name="dialogue.vi" Type="VI" URL="../hdf5/dialogue.vi"/>
+				<Item Name="h5_scope.vi" Type="VI" URL="../Processing/h5_scope.vi"/>
+				<Item Name="h5_stats.vi" Type="VI" URL="../hdf5/h5_stats.vi"/>
+			</Item>
+			<Item Name="dummy" Type="Folder">
+				<Item Name="random_array_1D.vi" Type="VI" URL="../Extensions/dummy/random_array_1D.vi"/>
+				<Item Name="osc_generate.vi" Type="VI" URL="../Extensions/dummy/osc_generate.vi"/>
+				<Item Name="sine_array.vi" Type="VI" URL="../Extensions/dummy/sine_array.vi"/>
+				<Item Name="random_array_2D.vi" Type="VI" URL="../Extensions/dummy/random_array_2D.vi"/>
 			</Item>
 			<Item Name="skip_squid.vi" Type="VI" URL="../Tools/skip_squid.vi"/>
 		</Item>
-		<Item Name="VARs" Type="Folder">
-			<Item Name="Examples" Type="Folder">
-				<Item Name="CHANNEL.vi" Type="VI" URL="../VARs/CHANNEL.vi"/>
-				<Item Name="PAUSE.vi" Type="VI" URL="../VARs/PAUSE.vi"/>
-				<Item Name="HOLD.vi" Type="VI" URL="../VARs/HOLD.vi"/>
-				<Item Name="ACQUIRE.vi" Type="VI" URL="../VARs/ACQUIRE.vi"/>
+		<Item Name="VAR" Type="Folder">
+			<Item Name="examples" Type="Folder">
+				<Item Name="ACQUIRE.vi" Type="VI" URL="../VAR/ACQUIRE.vi"/>
+				<Item Name="CHANNEL.vi" Type="VI" URL="../VAR/CHANNEL.vi"/>
+				<Item Name="HOLD.vi" Type="VI" URL="../VAR/HOLD.vi"/>
+				<Item Name="PAUSE.vi" Type="VI" URL="../VAR/PAUSE.vi"/>
 			</Item>
 		</Item>
 		<Item Name="Global.vi" Type="VI" URL="../Global.vi"/>
@@ -183,7 +190,6 @@
 				<Item Name="Read From Spreadsheet File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read From Spreadsheet File.vi"/>
 				<Item Name="Get File Extension.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Get File Extension.vi"/>
 				<Item Name="subDisplayMessage.vi" Type="VI" URL="/&lt;vilib&gt;/express/express output/DisplayMessageBlock.llb/subDisplayMessage.vi"/>
-				<Item Name="VariantType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/VariantDataType/VariantType.lvlib"/>
 				<Item Name="lib_path.vi" Type="VI" URL="/&lt;vilib&gt;/addons/h5labview2/base/lib_path.vi"/>
 				<Item Name="H5Equery.vi" Type="VI" URL="/&lt;vilib&gt;/addons/h5labview2/base/H5Equery.vi"/>
 				<Item Name="hid_t.ctl" Type="VI" URL="/&lt;vilib&gt;/addons/h5labview2/base/hid_t.ctl"/>
@@ -193,37 +199,20 @@
 				<Item Name="H5G.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/h5labview2/group/H5G.lvlib"/>
 				<Item Name="H5Lexists.vi" Type="VI" URL="/&lt;vilib&gt;/addons/h5labview2/base/H5Lexists.vi"/>
 				<Item Name="H5P.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/h5labview2/props/H5P.lvlib"/>
-				<Item Name="h5o_type.ctl" Type="VI" URL="/&lt;vilib&gt;/addons/h5labview2/base/h5o_type.ctl"/>
-				<Item Name="H5D.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/h5labview2/dataset/H5D.lvlib"/>
-				<Item Name="H5S.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/h5labview2/space/H5S.lvlib"/>
-				<Item Name="H5T.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/h5labview2/type/H5T.lvlib"/>
 				<Item Name="H5A.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/h5labview2/attrib/H5A.lvlib"/>
 				<Item Name="NI_AALBase.lvlib" Type="Library" URL="/&lt;vilib&gt;/Analysis/NI_AALBase.lvlib"/>
-				<Item Name="IviScope Initialize.vi" Type="VI" URL="/&lt;vilib&gt;/ivi/iviscope/_iviscope.llb/IviScope Initialize.vi"/>
-				<Item Name="IviScope Initialize With Options.vi" Type="VI" URL="/&lt;vilib&gt;/ivi/iviscope/_iviscope.llb/IviScope Initialize With Options.vi"/>
-				<Item Name="IviScope Configure Trigger.vi" Type="VI" URL="/&lt;vilib&gt;/ivi/iviscope/_iviscope.llb/IviScope Configure Trigger.vi"/>
-				<Item Name="IviScope IVI Error Converter.vi" Type="VI" URL="/&lt;vilib&gt;/ivi/iviscope/_iviscope.llb/IviScope IVI Error Converter.vi"/>
-				<Item Name="IviScope Configure Edge Trigger Source.vi" Type="VI" URL="/&lt;vilib&gt;/ivi/iviscope/_iviscope.llb/IviScope Configure Edge Trigger Source.vi"/>
-				<Item Name="IviScope Configure Trigger Coupling.vi" Type="VI" URL="/&lt;vilib&gt;/ivi/iviscope/_iviscope.llb/IviScope Configure Trigger Coupling.vi"/>
-				<Item Name="IviScope Configure Acquisition Record.vi" Type="VI" URL="/&lt;vilib&gt;/ivi/iviscope/_iviscope.llb/IviScope Configure Acquisition Record.vi"/>
-				<Item Name="IviScope Close.vi" Type="VI" URL="/&lt;vilib&gt;/ivi/iviscope/_iviscope.llb/IviScope Close.vi"/>
-				<Item Name="IviScope Configure Channel.vi" Type="VI" URL="/&lt;vilib&gt;/ivi/iviscope/_iviscope.llb/IviScope Configure Channel.vi"/>
-				<Item Name="IviScope Initiate Acquisition.vi" Type="VI" URL="/&lt;vilib&gt;/ivi/iviscope/_iviscope.llb/IviScope Initiate Acquisition.vi"/>
-				<Item Name="IviScope Fetch Waveform.vi" Type="VI" URL="/&lt;vilib&gt;/ivi/iviscope/_iviscope.llb/IviScope Fetch Waveform.vi"/>
-				<Item Name="IviScope Abort.vi" Type="VI" URL="/&lt;vilib&gt;/ivi/iviscope/_iviscope.llb/IviScope Abort.vi"/>
 				<Item Name="IMAQ Image.ctl" Type="VI" URL="/&lt;vilib&gt;/vision/Image Controls.llb/IMAQ Image.ctl"/>
 				<Item Name="IMAQ Dispose" Type="VI" URL="/&lt;vilib&gt;/vision/Basics.llb/IMAQ Dispose"/>
 				<Item Name="Image Type" Type="VI" URL="/&lt;vilib&gt;/vision/Image Controls.llb/Image Type"/>
 				<Item Name="IMAQ Create" Type="VI" URL="/&lt;vilib&gt;/vision/Basics.llb/IMAQ Create"/>
 				<Item Name="IMAQ ArrayToImage" Type="VI" URL="/&lt;vilib&gt;/vision/Basics.llb/IMAQ ArrayToImage"/>
+				<Item Name="H5D.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/h5labview2/dataset/H5D.lvlib"/>
+				<Item Name="H5T.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/h5labview2/type/H5T.lvlib"/>
+				<Item Name="H5S.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/h5labview2/space/H5S.lvlib"/>
+				<Item Name="VariantType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/VariantDataType/VariantType.lvlib"/>
+				<Item Name="h5o_type.ctl" Type="VI" URL="/&lt;vilib&gt;/addons/h5labview2/base/h5o_type.ctl"/>
 			</Item>
 			<Item Name="lvanlys.dll" Type="Document" URL="/&lt;resource&gt;/lvanlys.dll"/>
-			<Item Name="ivi.dll" Type="Document" URL="ivi.dll">
-				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
-			</Item>
-			<Item Name="IviScope.dll" Type="Document" URL="IviScope.dll">
-				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
-			</Item>
 			<Item Name="nivissvc.dll" Type="Document" URL="nivissvc.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
