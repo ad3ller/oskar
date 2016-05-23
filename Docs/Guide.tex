@@ -57,7 +57,7 @@ Also, please bear-in-mind that I am not a professional LabVIEW developer and non
 
 \begin{itemize}
 \item Install LabVIEW 2013 (or higher) Full Development Edition (written using 32-bit version
- on Windows 7 (64-bit))
+ on Windows 7 64-bit)
 
 \item Install NI Vision Development Module (only needed for fake\_camera.vi)
 
@@ -95,12 +95,12 @@ This simplified version of sequencer.vi included in oskar has been written for g
 
 \subsubsection{Overview}
 
-The basic premise of sequencer.vi is to read experimental scripts, i.e., sequence files (see below), which describe how parameters should be changed during a measurement series.  The program then ensures that the requested conditions (VARS) are met at the right time, and that any data acquisition software is informed of how to save data such that it can be mapped back to these conditions.  sequencer.vi is effectively the \emph{conductor} of an experimental measurement and does not perform the actual hardware communication (which is delegated to individual VAR vi's), therefore extending control to new instruments can be done modularly.
+The basic premise of sequencer.vi is to read experimental scripts, i.e., sequence files (see below), which describe how parameters should be changed during a measurement series.  The program then ensures that the requested conditions (VARS) are met at the right time, and that any data acquisition software is informed of how to save data such that it can be mapped back to these conditions.  sequencer.vi is effectively the \emph{conductor} of an experimental measurement and does not perform the actual hardware communication (which is delegated to individual VAR vi's), therefore extending control to new instruments can be done in a modular way.
 
 \subsubsection{Sequence files}
 The sequence file (*.osq) provides a means to script a simple experiment. Every \emph{line} contains a single configuration of the experimental variables that one wishes to set, and recorded data is mapped to these using a sequence ID (SQUID) that iterates as each configuration is executed in turn.
 
-The osq files are stored as xml and each \emph{line} is an element of an array called \emph{SEQs}.  Each of these elements are clusters that, in the simplest case (see section~\ref{sex:ext} for possible extensions), contain only a string called \emph{Comment} and an array called \emph{VAR Array}. The former does nothing but provide a way to add a comment to each line; the latter is a two column string array: the first column contains every VAR name relevant to a given experiment and the second each corresponding value.  This cluster is called  a sequence \emph{line}, each of which correspond to one measurement configuration of variables.  A series of lines make up the sequence, i.e., a collection of measurement conditions, the execution of which constitutes an experimental RUN.  As a simple example, use Editor.vi to open and view the file \emph{./Examples/example\_seqs.osq}.  This sequence contains just two lines, each with a single VAR called PAUSE, with a value set to 1000 then 2000.
+The osq files are stored as xml and each \emph{line} is an element of an array called \emph{SEQs}.  Each of these elements are clusters that, in the simplest case (see section~\ref{sex:ext} for possible extensions), contain only a string called \emph{Comment} and an array called \emph{VAR Array}. The former does nothing but provide a way to add a comment to each line; the latter is a two column string array: the first column contains every VAR name relevant to a given experiment and the second each corresponding value.  This cluster is called  a sequence \emph{line}, each of which correspond to one measurement configuration of variables.  A series of lines make up the sequence (i.e., a collection of measurement conditions), the execution of which constitutes an experimental RUN.  As a simple example, use Editor.vi to open and view the file \emph{./Examples/example\_seqs.osq}.  This sequence contains just two lines, each with a single VAR called PAUSE, with a value set to 1000 then 2000.
 
 A sequence file is loaded into sequencer.vi by entering its file path into  \emph{SEQ File (*.osq)} on the \emph{Run/Sequencer} tab.  Loading a file will automatically count the number of \emph{lines} and will indicate the names and values of VARs in the series; this list is updated by pressing \emph{Refresh}.  The parameter \emph{Acquire} should be set to the amount of time that data will be recorded for per line before proceeding to the next. \emph{Loops} sets the number of times that the sequencer should loop over the whole series. 
 
@@ -257,7 +257,7 @@ Once a satisfactory output SEQ has been made, it can be saved to an ``.osq" file
 	This will also make it easier to guess what the TAG was used for when inspecting omv files.
 \end{warning}
 
-\subsection[Inject.vi, Append.vi and Combine.vi]{Inject.vi, Append.vi and Combine.vi\\ %
+\subsection[Inject.vi, Append.vi, and Combine.vi]{Inject.vi, Append.vi, and Combine.vi\\ %
 	\normalsize - adding lines to sequences}
 Modder.vi offers a very powerful way to build sequences but it is only capable of producing rectangular permutations of the TAGs given it.  Sometimes it is convenient to make an occasional measurement with a certain set of values, e.g., to periodically measure a background during a scan.  This cannot be done with Modder.vi directly, however, Inject.vi can be used instead to add lines to .osq files at specified positions.
 
