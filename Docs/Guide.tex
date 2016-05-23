@@ -53,26 +53,29 @@ The code was written by Adam Deller at University College London for experiments
 To make use of oskar some experience writing in G (Labview code) is essential. The project is useless without control hardware and data acquisition devices, however, no drivers have been included. You will need to interface any drivers (e.g., using  LINX by \href{https://www.labviewmakerhub.com}{LabVIEW MakerHub} to control an  \href{https://www.arduino.cc/}{Arduino}) with oskar yourself -- fortunately, this is a fairly simple process and examples are included.  In the data acquisition example crudely simulated oscilloscopes and cameras are used (a more realistic IVI scope example is also included).  Once you have successfully  interfaced the drivers you need, sequencer.vi solves the problem of covering large parameter spaces systematically and flexibly.  If you are trying to integrate oskar into an existing experimental set-up, you have likely already managed the difficult part (software control of your hardware).  There is very little going on under the hood (see section~\ref{sex:seq} for an overview, or appendix~\ref{sex:pseudo} for a simplistic pseudo-code version),  nonetheless it is certainly helpful if you have enough understanding of LabVIEW to be able to inspect the code and modify it to suit your needs.
 
 Also, please bear-in-mind that I am not a professional LabVIEW developer and none of the VIs are necessarily examples of good coding practice. Though I've found oskar is generally very stable and easy to use (once you know the basics), be sure to test everything thoroughly for yourself and be vigilant for unexpected behaviour!
-\subsection*{Pre-requisites}
+\subsection*{Installation}
 
 \begin{itemize}
-\item LabVIEW 2013 (or higher)  [written using 32-bit Labview on 64-bit Windows 7]
-	 \begin{itemize}
-	 	\item NI Gmath
-	 	\item NI VISA (hardware drivers)
-	 	\item NI Vision Acquisition Software (for camera example)
-	 	\item NI IVI Compliance (for osc. example) [tested using tktds1k2k IVI driver]
-	 \end{itemize}
+\item Install LabVIEW 2013 (or higher) Full Development Edition (written using 32-bit version
+ on Windows 7 (64-bit))
 
-\item  \href{https://www.hdfgroup.org}{HDF5} [should match LabVIEW install, tested with 32-bit]
+\item Install NI Vision Development Module (only needed for fake\_camera.vi)
 
-\item  \href{http://h5labview.sourceforge.net/}{h5labview}
+\item  Install \href{https://www.hdfgroup.org/HDF5/release/obtain5.html}{HDF5} (should match LabVIEW install, tested with 32-bit)
+
+\item Install the \href{http://h5labview.sourceforge.net/}{h5labview library}.  It's recommended that you install the \href{https://sourceforge.net/projects/h5labview/files/}{latest version} using \href{http://vipm.jki.net/}{JKI VI package manager}. 
+
+\item Download and unzip \href{https://github.com/PositroniumSpectroscopy/oskar}{oskar}.
 
 \end{itemize}
 
+\includegraphics[width=0.3\textwidth]{images/oskar.png}
+
 \emph{Recommended}
 \begin{itemize}
-\item  \href{https://www.hdfgroup.org/products/java/hdfview/}{HDFView}
+	\item NI VISA (hardware drivers)
+    \item NI IVI Compliance (for osc. example) [tested using tktds1k2k IVI driver]
+	\item  \href{https://www.hdfgroup.org/products/java/hdfview/}{HDFView} (this is the easiest way to explore hdf5 files).
 \end{itemize}
 
 There are many freely available libraries for importing hdf5 data for analysis, e.g., \href{http://www.h5py.org/}{h5py} for python.
@@ -87,6 +90,8 @@ The openseq version of sequencer.vi was written to parse configuration files for
 As well as conducting control of hardware, the sequencer is used as a hub for a data acquisition framework based on the HDF5 format.  By generating unique run IDs (RID) and hdf5 files for every series of experiments it executes, the sequencer can coordinate programs written for data acquisition (e.g. from cameras/ oscilloscopes) and organise the recording of data files into a structure suitable for batch analysis.
 
 This simplified version of sequencer.vi included in oskar has been written for generically conducting experiments/ data acquisition with control over many variables.   No hardware drivers are included, however, the VARs and data acquisition system can be rapidly adapted to control/ coordinate fairly complex experiments.
+
+\includegraphics[width=0.75\textwidth]{images/sequencer.png}
 
 \subsubsection{Overview}
 
@@ -165,6 +170,8 @@ It's important to understand the technical details for how VARs are actually mad
 \end{enumerate} 
 
 You can make a copy of PAUSE to use as a template, change the value of VAR (i.e. the name used by the sequencer to communicate with the vi) and write into step 4 the code specific to your own needs.  See CHANNEL for a more complicated example that uses options, and which records values set for each channel as a variant.  In this way newly received values can be compared to the last value set for that channel, to determine if anything needs to be changed.
+
+\includegraphics[width=0.9\textwidth]{images/var_block.png}
 
 %\subsubsection{Network VARs}
 %Sometimes it is not possible - or advisable - to centralise control over all experimental hardware to a single PC.  Nonetheless, hardware connected to a separate machine can still be controlled by the sequencer using Data-sockets.
@@ -290,14 +297,14 @@ it's relatively easy to coordinate the saving of data in accordance with the sta
 
 For instance, you likely only wish to record data during the acquisition periods of a running SEQ, therefore in your data-acquisition VI place an appropriately configured ``h5\_[name].vi" subVI inside a case structure controlled by Save AND Running.  See `h5\_scope.vi' for example.  This VI packages the relevant meta-data (channel gain, time-base, etc.) into variant attributes and passes both this and the actual data to `H5\_1D\_SGL.vi', which then writes the data to the H5 files in a dataset called OSC\_\# (\# is replaced by the channel number), inside of the SQUID subgroup.  Something equivalent to ``h5\_scope.vi" could be made for each data-acquisition device, written to appropriately package the meta-data attributes.  LabVIEW semaphores are used to prevent more than one vi writing to the hdf5 file at the same time.  The fake\_scope.vi illustrates how this is all achieved.  fake\_camera.vi is an even simpler example that just uses the generic h5\_2D\_stacking.vi to save directly.
 
+\includegraphics[width=0.9\textwidth]{images/DAQ.png}
+
 The format for saving data depends on its shape (e.g. 1D array, 2D image) and data type (SGL, DBL, LONG, etc.).  Examples for 1D\_SGl, 1D\_DBL, 2D\_I32, can be found in the ./tools/hdf5 virtual folder.  These vi's expect repeat measurements to be made within a squid, for instance, when the 1D\_SGL is asked to write data to a pre-existing dataset, it will be appended as a new row.  The example ``h5\_stats.vi'' demonstrates how cluster data can be written to a dataset.  This might be used when, rather than a time series, a range of values (possibly of differing dtypes) are recorded at once.  This DataFrame-like structure is most likely useful if analysis is performed in LabVIEW to determine, e.g. trigger events (time, amplitude, width), or statistical features (mean, max, min, range, FWHM).
 
-Because VAR conditions are stored in each squid's attributes, and as data relating to a squid are stored within its subgroup, it's inherently simple to map data to the relevant VAR conditions.
+Because VAR conditions are stored in each squid's attributes, and as data relating to a squid is stored within its subgroup, it's trivial to map data to the relevant VAR conditions.  This assumes of course that data is recorded correctly, however, the individual data acquisition vi's are responsible for ensuring this (not the sequencer) and it's technically possible to get wrong.
 
 \begin{warning}{}
-	Oskar is designed for experiments where many ($>$10) repeat measurements are recorded at a rate of 10 Hz to 0.3 Hz, then an experimental parameter is varied and more measurements are similarly made.  For lower acquisition rates (e.g. long camera exposure times) you must ensure that data taken near the boundary of two SQUIDS is mapped to the correct one, or safely ignored if ambiguous.  
-	
-	This can be done quite easily, for instance, by checking the SQUID global variable has the same value both at the start of an exposure and when complete.  Alternatively, the Global variable EOS (end-of-squid) can be used to synchronise the sequencer to some form of data acquisition or hardware trigger.  See `Tools/skip\_squid.vi'.  By using EOS with the acquisition time set to be unattainably long, the data acquisition device can effectively control how long the sequencer acquires data for.
+	oskar is designed for experiments where many ($>$10) repeat measurements are recorded at a rate of 10 Hz to 0.3 Hz, then an experimental parameter is varied and more measurements are similarly made.  For lower acquisition rates (e.g., long camera exposure times) you must ensure that data taken near the boundary of two SQUIDS is mapped to the correct one, or safely ignored if ambiguous.  This can be done quite easily. For instance, by checking the SQUID global variable has the same value both at the start of an exposure and the end.  Alternatively, the global variable EOS (end-of-squid) can be used to synchronise the sequencer to some form of data acquisition or hardware trigger.  See `Tools/skip\_squid.vi'.  By using EOS with the acquisition time set to be unattainably long, a data acquisition device can effectively control how long the sequencer acquires data for (e.g., until 10 waveforms have been recorded).
 \end{warning}
 
 
@@ -330,9 +337,9 @@ The following is simplified pseudo-code illustrating the basic format of what ha
 \begin{Verbatim}[commandchars=\\\{\}]
 [{\color{blue}Event: Run Value Change}]
 {\color{red}[0] pre-initialisation}
-	global.Run = True
+	global.Run = {\color{purple}True}
 	global.Save = Save
-	global.Acquire = False
+	global.Acquire = {\color{purple}False}
 {\color{red}[1] initilise run}
 	{\color{DarkGreen}#Generate RID from timestamp}
 	RID = time.now(YYYYmmdd_HHMMSS) 
@@ -374,19 +381,20 @@ The following is simplified pseudo-code illustrating the basic format of what ha
 			{\color{purple}while not} [global.VARS.var.set for var in VARS].all():
 				wait(100 ms)
 			{\color{red}[2.2] acquire data}
-			global.Acquire = True
+			global.Rec = {\color{purple}None}
+			global.Acquire = {\color{purple}True}
 			start = time.now()
 			{\color{DarkGreen}#wait for acquisition}
 			{\color{purple}while} elapsed < acquire:
 				end = time.now()
 				elapsed = end - start
 				wait(200 ms)
-			global.Acquire = False
+			global.Acquire = {\color{purple}False}
 			H5[squid].write\_attributes([start, end, elapsed, global.Rec])
 			{\color{red}[2.3] Reset}
 			{\color{purple}for} var {\color{purple}in} VARS:
-				var.set = False
-				var.recieved = False
+				var.set = {\color{purple}False}
+				var.recieved = {\color{purple}False}
 			{\color{DarkGreen}#increment squid}
 			squid = squid + 1
 		{\color{DarkGreen}#increment loop}
