@@ -1,31 +1,34 @@
 oskar
 =======
+for coordinating and recording experiments with LabVIEW and HDF5
+****
 
 @author: Adam Deller
 
 oskar is a collection of tools written using Labview 2013. It is designed to assist in coordinating
-control of disparate hardware and to provide a framework for associated data management using [HDF5](https://www.hdfgroup.org/why_hdf/ "https://www.hdfgroup.org/why_hdf/").  Essentially, it is a tool for running complex experiments using relatively simple experimental controls, with a focus on: extensibility (it should be reasonably easy to add new control/ DAQ hardware); on sensibly structuring acquired data; and automatically pairing data with the associated meta-data (attributes) needed to describe it.
+hardware control and to provide a framework for acquired data using [HDF5](https://www.hdfgroup.org/why_hdf/ "https://www.hdfgroup.org/why_hdf/").  Essentially, it is a tool for running experiments. It was designed with a focus on: extensibility (it should be reasonably easy to add new control/ DAQ hardware); on sensibly structuring acquired data; and explicitly pairing data with the metadata (attributes) needed to describe it.
 
->##... in a nutshell
->An experimental *run* consists of the linear execution of a series of measurements, each configured using a specific set of variable experimental parameters (*vars*), such as: laser wavelength = X, applied voltage = Y, etc.  When a run is initiated the timestamp (YYYYmmdd_HHMMSS) designates the `RID` and an hdf5 file `Data/[YYYY]/[mm]/[dd]/[RID]/[RID]_raw.h5` is created.  This file contains subgroups corresponding to an iterating `SQUID`, which is used to identify each measurement configuration. Any data acquired during a given `SQUID` are saved within its group
+>### summary
+>An experimental *run* consists of a series of measurements, each configured using a specific set of variable experimental parameters (*VARS*), such as: laser wavelength = X, applied voltage = Y, etc.  When a run is initiated the timestamp (YYYYmmdd_HHMMSS) designates the `RID` and an hdf5 file `[YYYY]/[mm]/[dd]/[RID]/[RID]_raw.h5` is created.  This file will be populated with sequentially numbered groups (the `SQUID` number) that each correspond to one measurement configuration. The *VAR* values corresponding to each `SQUID` are written to its group as attributes, and datasets acquired during each measurement are saved within the group.
 
-> The above is coordinated by sequencer.vi using osq files: these encode the various combinations of *vars* that will make up a run.  sequencer.vi ensures each combination of settings are met at the appropriate time and also distributes the `RID` and `SQUID` to any data acquisition vi's.  The *var* values corresponding to each `SQUID` are written to its group as attributes.
+> The measurement sequence is coordinated by **sequencer.vi** using *osq* files: these list the various combinations of *VARS* that will make up a run.  **sequencer.vi** ensures each combination of settings are met at the appropriate time and also distributes the `RID` and `SQUID` to any data acquisition vi's.  The program **modder.vi** is used to create *osq* files in which *VAR* values are systematically varied.
 
-> oskar includes modder.vi for creating osq files, where any number of *vars* can be  systematically varied over arbitrarily many permutations.
+HDF5 support is provided by the [h5labview](http://h5labview.sourceforge.net/) library developed by Martijn Jasperse.
 
-For further information see the Guide.
+For further information see ./Docs/Guide.pdf
 
-## Pre-requisites
+## Installation
 
-LabVIEW 2013 (or higher) [tested 32-bit on Windows 7]
+oskar requires LabVIEW 2013 (or higher) Full Development Edition (written using 32-bit version
+ on Windows 7 64-bit).  The DAQ example `fake\_camera.vi' requires the NI Vision Development Module.
 
-[HDF5](https://www.hdfgroup.org "https://www.hdfgroup.org") [should match Labview install, tested with 32-bit]
+- Install [HDF5](https://www.hdfgroup.org/HDF5/release/obtain5.html). Select 32-bit/ 64-bit version to match LabVIEW install. Reboot.
+- Download the latest version of the [h5labview library](http://h5labview.sourceforge.net/) and install it using the using [JKI VI package manager](http://vipm.jki.net/). 
+- Download and unzip [oskar](https://github.com/PositroniumSpectroscopy/oskar). Open **oskar.lvproj**.
 
-[h5labview](http://h5labview.sourceforge.net/ "http://h5labview.sourceforge.net/")
+Recommended:
 
-### Recommended
+ - NI VISA (hardware drivers)
+ - [HDFView](https://www.hdfgroup.org/products/java/hdfview/) (for opening and exploring HDF5 files).
 
-[HDFView](https://www.hdfgroup.org/products/java/hdfview/ "https://www.hdfgroup.org/products/java/hdfview/")
-
-There are many freely available libraries for importing hdf5 data for analysis, e.g., [h5py](http://www.h5py.org/ "http://www.h5py.org/") for python.
-
+There are many freely available libraries for importing hdf5 data for analysis, e.g., [h5py](http://www.h5py.org/) for python.

@@ -9,14 +9,8 @@ install hdfview-2.11-win64-vs2012
 # http://www.ni.com
 install win64 LabVIEW 2014 Pro. [reboot]
 update LabVIEW 2014 sp1. [reboot]
-install NI VISA 14.0.1
-install NI IVI comliance package 15.0
+
 
 # http://h5labview.sourceforge.net/
 download h5labview2-2.11.2.137.vip and install using VIPM
 
-# IVI scope
-Open NI_MAX
-	create driver session 'Tektronix tktds20xx' simulated by niScope
-		Add harware asset 'notascope'
-	create  Logical Name 'foo' with driver session 'bar'.
