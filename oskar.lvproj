@@ -86,11 +86,11 @@
 				<Item Name="h5_scope.vi" Type="VI" URL="../hdf5/h5_scope.vi"/>
 				<Item Name="h5_stats.vi" Type="VI" URL="../hdf5/h5_stats.vi"/>
 			</Item>
-			<Item Name="dummy" Type="Folder">
-				<Item Name="random_array_1D.vi" Type="VI" URL="../Extensions/dummy/random_array_1D.vi"/>
-				<Item Name="osc_generate.vi" Type="VI" URL="../Extensions/dummy/osc_generate.vi"/>
-				<Item Name="sine_array.vi" Type="VI" URL="../Extensions/dummy/sine_array.vi"/>
-				<Item Name="random_array_2D.vi" Type="VI" URL="../Extensions/dummy/random_array_2D.vi"/>
+			<Item Name="fake" Type="Folder">
+				<Item Name="random_array_1D.vi" Type="VI" URL="../Extensions/fake/random_array_1D.vi"/>
+				<Item Name="random_array_2D.vi" Type="VI" URL="../Extensions/fake/random_array_2D.vi"/>
+				<Item Name="osc_generate.vi" Type="VI" URL="../Extensions/fake/osc_generate.vi"/>
+				<Item Name="sine_array.vi" Type="VI" URL="../Extensions/fake/sine_array.vi"/>
 			</Item>
 			<Item Name="skip_squid.vi" Type="VI" URL="../Tools/skip_squid.vi"/>
 		</Item>
