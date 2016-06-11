@@ -30,10 +30,11 @@
 			<Item Name="Review.vi" Type="VI" URL="../Build Sequences/Review.vi"/>
 		</Item>
 		<Item Name="Docs" Type="Folder">
-			<Item Name="Guide.pdf" Type="Document" URL="../Docs/Guide.pdf"/>
 			<Item Name="LICENSE.txt" Type="Document" URL="../LICENSE.txt"/>
 			<Item Name="README.md" Type="Document" URL="../README.md"/>
-			<Item Name="test_proc.txt" Type="Document" URL="../Docs/test_proc.txt"/>
+			<Item Name="Wiki" Type="Hyperlink">
+				<Property Name="NI.Address" Type="Str">https://github.com/PositroniumSpectroscopy/oskar/wiki</Property>
+			</Item>
 		</Item>
 		<Item Name="Processing" Type="Folder">
 			<Item Name="rebin.vi" Type="VI" URL="../Processing/rebin.vi"/>

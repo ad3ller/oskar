@@ -296,14 +296,20 @@ img {
 <hr />
 <p>@author: Adam Deller</p>
 <p>oskar is a collection of tools written using Labview 2013. It is designed to assist in coordinating
-hardware control and to provide a framework for acquired data using <a href="https://www.hdfgroup.org/why_hdf/" title="https://www.hdfgroup.org/why_hdf/">HDF5</a>.  Essentially, it is a tool for running experiments. It was designed with a focus on: extensibility (it should be reasonably easy to add new control/ DAQ hardware); on sensibly structuring acquired data; and explicitly pairing data with the metadata (attributes) needed to describe it.</p>
+hardware and to provide a framework for acquired data using <a href="https://www.hdfgroup.org/why_hdf/" title="https://www.hdfgroup.org/why_hdf/">HDF5</a>.  </p>
+<p>Essentially, it is a tool for running experiments. It was designed with a focus on: </p>
+<ul>
+<li>extensibility (it should be reasonably easy to add new control/ DAQ hardware)</li>
+<li>structuring data</li>
+<li>pairing data with the metadata (attributes)</li>
+</ul>
 <blockquote>
 <h3>summary</h3>
 <p>An experimental <em>run</em> consists of a series of measurements, each configured using a specific set of variable experimental parameters (<em>VARS</em>), such as: laser wavelength = X, applied voltage = Y, etc.  When a run is initiated the timestamp (YYYYmmdd_HHMMSS) designates the <code>RID</code> and an hdf5 file <code>[YYYY]/[mm]/[dd]/[RID]/[RID]_raw.h5</code> is created.  This file will be populated with sequentially numbered groups (the <code>SQUID</code> number) that each correspond to one measurement configuration. The <em>VAR</em> values corresponding to each <code>SQUID</code> are written to its group as attributes, and datasets acquired during each measurement are saved within the group.</p>
 <p>The measurement sequence is coordinated by <strong>sequencer.vi</strong> using <em>osq</em> files: these list the various combinations of <em>VARS</em> that will make up a run.  <strong>sequencer.vi</strong> ensures each combination of settings are met at the appropriate time and also distributes the <code>RID</code> and <code>SQUID</code> to any data acquisition vi's.  The program <strong>modder.vi</strong> is used to create <em>osq</em> files in which <em>VAR</em> values are systematically varied.</p>
 </blockquote>
 <p>HDF5 support is provided by the <a href="http://h5labview.sourceforge.net/">h5labview</a> library developed by Martijn Jasperse.</p>
-<p>For further information see ./Docs/Guide.pdf</p>
+<p>For further information see the <a href="https://github.com/PositroniumSpectroscopy/oskar/wiki" title="Wiki">Wiki</a>.</p>
 <h2>Installation</h2>
 <p>oskar requires LabVIEW 2013 (or higher) Full Development Edition (written using 32-bit version
  on Windows 7 64-bit).  The DAQ example `fake_camera.vi' requires the NI Vision Development Module.</p>

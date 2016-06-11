@@ -6,7 +6,13 @@ for coordinating and recording experiments with LabVIEW and HDF5
 @author: Adam Deller
 
 oskar is a collection of tools written using Labview 2013. It is designed to assist in coordinating
-hardware control and to provide a framework for acquired data using [HDF5](https://www.hdfgroup.org/why_hdf/ "https://www.hdfgroup.org/why_hdf/").  Essentially, it is a tool for running experiments. It was designed with a focus on: extensibility (it should be reasonably easy to add new control/ DAQ hardware); on sensibly structuring acquired data; and explicitly pairing data with the metadata (attributes) needed to describe it.
+hardware and to provide a framework for acquired data using [HDF5](https://www.hdfgroup.org/why_hdf/ "https://www.hdfgroup.org/why_hdf/").  
+
+Essentially, it is a tool for running experiments. It was designed with a focus on: 
+
+ - extensibility (it should be reasonably easy to add new control/ DAQ hardware)
+ - structuring data
+ - pairing data with the metadata (attributes)
 
 >### summary
 >An experimental *run* consists of a series of measurements, each configured using a specific set of variable experimental parameters (*VARS*), such as: laser wavelength = X, applied voltage = Y, etc.  When a run is initiated the timestamp (YYYYmmdd_HHMMSS) designates the `RID` and an hdf5 file `[YYYY]/[mm]/[dd]/[RID]/[RID]_raw.h5` is created.  This file will be populated with sequentially numbered groups (the `SQUID` number) that each correspond to one measurement configuration. The *VAR* values corresponding to each `SQUID` are written to its group as attributes, and datasets acquired during each measurement are saved within the group.
@@ -15,7 +21,7 @@ hardware control and to provide a framework for acquired data using [HDF5](https
 
 HDF5 support is provided by the [h5labview](http://h5labview.sourceforge.net/) library developed by Martijn Jasperse.
 
-For further information see ./Docs/Guide.pdf
+For further information see the [Wiki](https://github.com/PositroniumSpectroscopy/oskar/wiki "Wiki").
 
 ## Installation
 
