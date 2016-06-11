@@ -1,6 +1,8 @@
 oskar
 =======
 for coordinating and recording experiments with LabVIEW and HDF5
+
+STATUS: v 0.0.1 (unstable)
 ****
 
 @author: Adam Deller
