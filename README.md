@@ -2,7 +2,7 @@ oskar
 =======
 for coordinating and recording experiments with LabVIEW and HDF5
 
-STATUS: v 0.0.1 (unstable)
+STATUS: version 0.0.2 (alpha)
 ****
 
 @author: Adam Deller
@@ -23,7 +23,9 @@ Essentially, it is a tool for running experiments. It was designed with a focus 
 
 HDF5 support is provided by the [h5labview](http://h5labview.sourceforge.net/) library developed by Martijn Jasperse.
 
-For further information see the [Wiki](https://github.com/PositroniumSpectroscopy/oskar/wiki "Wiki").
+## Documentation
+
+A guide to oskar is available on the [Wiki](https://github.com/PositroniumSpectroscopy/oskar/wiki "Wiki").
 
 ## Installation
 

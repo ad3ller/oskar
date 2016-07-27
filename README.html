@@ -293,6 +293,7 @@ img {
 <body>
 <h1>oskar</h1>
 <p>for coordinating and recording experiments with LabVIEW and HDF5</p>
+<p>STATUS: version 0.0.2 (alpha)</p>
 <hr />
 <p>@author: Adam Deller</p>
 <p>oskar is a collection of tools written using Labview 2013. It is designed to assist in coordinating
@@ -309,7 +310,8 @@ hardware and to provide a framework for acquired data using <a href="https://www
 <p>The measurement sequence is coordinated by <strong>sequencer.vi</strong> using <em>osq</em> files: these list the various combinations of <em>VARS</em> that will make up a run.  <strong>sequencer.vi</strong> ensures each combination of settings are met at the appropriate time and also distributes the <code>RID</code> and <code>SQUID</code> to any data acquisition vi's.  The program <strong>modder.vi</strong> is used to create <em>osq</em> files in which <em>VAR</em> values are systematically varied.</p>
 </blockquote>
 <p>HDF5 support is provided by the <a href="http://h5labview.sourceforge.net/">h5labview</a> library developed by Martijn Jasperse.</p>
-<p>For further information see the <a href="https://github.com/PositroniumSpectroscopy/oskar/wiki" title="Wiki">Wiki</a>.</p>
+<h2>Documentation</h2>
+<p>A guide to oskar is available on the <a href="https://github.com/PositroniumSpectroscopy/oskar/wiki" title="Wiki">Wiki</a>.</p>
 <h2>Installation</h2>
 <p>oskar requires LabVIEW 2013 (or higher) Full Development Edition (written using 32-bit version
  on Windows 7 64-bit).  The DAQ example `fake_camera.vi' requires the NI Vision Development Module.</p>
