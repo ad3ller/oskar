@@ -94,6 +94,7 @@
 			</Item>
 			<Item Name="skip_squid.vi" Type="VI" URL="../Tools/skip_squid.vi"/>
 			<Item Name="msg_handler.vi" Type="VI" URL="../Tools/msg_handler.vi"/>
+			<Item Name="error_log.vi" Type="VI" URL="../Tools/error_log.vi"/>
 		</Item>
 		<Item Name="VAR" Type="Folder">
 			<Item Name="examples" Type="Folder">
@@ -196,6 +197,11 @@
 				<Item Name="H5S.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/h5labview2/space/H5S.lvlib"/>
 				<Item Name="VariantType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/VariantDataType/VariantType.lvlib"/>
 				<Item Name="h5o_type.ctl" Type="VI" URL="/&lt;vilib&gt;/addons/h5labview2/base/h5o_type.ctl"/>
+				<Item Name="Write Spreadsheet String.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write Spreadsheet String.vi"/>
+				<Item Name="Write To Spreadsheet File (string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write To Spreadsheet File (string).vi"/>
+				<Item Name="Write To Spreadsheet File (I64).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write To Spreadsheet File (I64).vi"/>
+				<Item Name="Write To Spreadsheet File (DBL).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write To Spreadsheet File (DBL).vi"/>
+				<Item Name="Write To Spreadsheet File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write To Spreadsheet File.vi"/>
 			</Item>
 			<Item Name="lvanlys.dll" Type="Document" URL="/&lt;resource&gt;/lvanlys.dll"/>
 			<Item Name="nivissvc.dll" Type="Document" URL="nivissvc.dll">
