@@ -93,6 +93,7 @@
 				<Item Name="sine_array.vi" Type="VI" URL="../Extensions/fake/sine_array.vi"/>
 			</Item>
 			<Item Name="skip_squid.vi" Type="VI" URL="../Tools/skip_squid.vi"/>
+			<Item Name="msg_handler.vi" Type="VI" URL="../Tools/msg_handler.vi"/>
 		</Item>
 		<Item Name="VAR" Type="Folder">
 			<Item Name="examples" Type="Folder">
