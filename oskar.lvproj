@@ -54,6 +54,7 @@
 				<Item Name="Shuffle_v2.vi" Type="VI" URL="../Tools/Shuffle_v2.vi"/>
 				<Item Name="date_path_h5.vi" Type="VI" URL="../Tools/date_path_h5.vi"/>
 				<Item Name="dtype.vi" Type="VI" URL="../Tools/dtype.vi"/>
+				<Item Name="status.ctl" Type="VI" URL="../Tools/status.ctl"/>
 			</Item>
 			<Item Name="SEQ" Type="Folder">
 				<Item Name="arr_intersperse.vi" Type="VI" URL="../Tools/arr_intersperse.vi"/>
