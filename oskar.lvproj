@@ -28,6 +28,7 @@
 			<Item Name="Inject.vi" Type="VI" URL="../Build Sequences/Inject.vi"/>
 			<Item Name="Modder.vi" Type="VI" URL="../Build Sequences/Modder.vi"/>
 			<Item Name="Review.vi" Type="VI" URL="../Build Sequences/Review.vi"/>
+			<Item Name="Scan.vi" Type="VI" URL="../Build Sequences/Scan.vi"/>
 		</Item>
 		<Item Name="Docs" Type="Folder">
 			<Item Name="LICENSE.txt" Type="Document" URL="../LICENSE.txt"/>
