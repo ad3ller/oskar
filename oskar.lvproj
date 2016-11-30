@@ -84,6 +84,7 @@
 				<Item Name="h5_1D_SGL.vi" Type="VI" URL="../hdf5/h5_1D_SGL.vi"/>
 				<Item Name="h5_2D_I16.vi" Type="VI" URL="../hdf5/h5_2D_I16.vi"/>
 				<Item Name="h5_2D_I16_stacking.vi" Type="VI" URL="../hdf5/h5_2D_I16_stacking.vi"/>
+				<Item Name="h5_2D_U16_stacking.vi" Type="VI" URL="../hdf5/h5_2D_U16_stacking.vi"/>
 				<Item Name="dialogue.vi" Type="VI" URL="../hdf5/dialogue.vi"/>
 				<Item Name="h5_scope.vi" Type="VI" URL="../hdf5/h5_scope.vi"/>
 				<Item Name="h5_stats.vi" Type="VI" URL="../hdf5/h5_stats.vi"/>
