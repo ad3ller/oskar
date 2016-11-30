@@ -104,6 +104,7 @@
 				<Item Name="CHANNEL.vi" Type="VI" URL="../VAR/CHANNEL.vi"/>
 				<Item Name="HOLD.vi" Type="VI" URL="../VAR/HOLD.vi"/>
 				<Item Name="PAUSE.vi" Type="VI" URL="../VAR/PAUSE.vi"/>
+				<Item Name="PAUSE_RAND.vi" Type="VI" URL="../VAR/PAUSE_RAND.vi"/>
 			</Item>
 		</Item>
 		<Item Name="Global.vi" Type="VI" URL="../Global.vi"/>
