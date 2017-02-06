@@ -7,7 +7,7 @@ STATUS: version 0.0.2 (alpha)
 
 @author: Adam Deller
 
-oskar is a collection of Labview vi's that help with the tasks of (i) systematically controlling hardware, and (ii) organizing acquired data using [HDF5](https://www.hdfgroup.org/why_hdf/ "https://www.hdfgroup.org/why_hdf/").  
+oskar is a collection of Labview vi's that help with the tasks of (i) systematically controlling hardware and (ii) organizing acquired data using [HDF5](https://www.hdfgroup.org/why_hdf/ "https://www.hdfgroup.org/why_hdf/").  
 
 Essentially, oskar is a tool for running experiments. It was designed with a focus on: 
 
