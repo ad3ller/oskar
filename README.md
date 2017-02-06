@@ -7,19 +7,13 @@ STATUS: version 0.0.2 (alpha)
 
 @author: Adam Deller
 
-oskar is a collection of tools written using Labview 2013. It is designed to assist in coordinating
-hardware and to provide a framework for acquired data using [HDF5](https://www.hdfgroup.org/why_hdf/ "https://www.hdfgroup.org/why_hdf/").  
+oskar is a collection of Labview vi's that help with the tasks of (i) systematically controlling hardware, and (ii) organizing acquired data using [HDF5](https://www.hdfgroup.org/why_hdf/ "https://www.hdfgroup.org/why_hdf/").  
 
-Essentially, it is a tool for running experiments. It was designed with a focus on: 
+Essentially, oskar is a tool for running experiments. It was designed with a focus on: 
 
- - extensibility (it should be reasonably easy to add new control/ DAQ hardware)
- - structuring data
- - pairing data with the metadata (attributes)
-
->### summary
->An experimental *run* consists of a series of measurements, each configured using a specific set of variable experimental parameters (*VARS*), such as: laser wavelength = X, applied voltage = Y, etc.  When a run is initiated the timestamp (YYYYmmdd_HHMMSS) designates the `RID` and an hdf5 file `[YYYY]/[mm]/[dd]/[RID]/[RID]_raw.h5` is created.  This file will be populated with sequentially numbered groups (the `SQUID` number) that each correspond to one measurement configuration. The *VAR* values corresponding to each `SQUID` are written to its group as attributes, and datasets acquired during each measurement are saved within the group.
-
-> The measurement sequence is coordinated by **sequencer.vi** using *osq* files: these list the various combinations of *VARS* that will make up a run.  **sequencer.vi** ensures each combination of settings are met at the appropriate time and also distributes the `RID` and `SQUID` to any data acquisition vi's.  The program **modder.vi** is used to create *osq* files in which *VAR* values are systematically varied.
+ - Hardware extensibility (i.e., it should be reasonably easy to add new control/ DAQ hardware).
+ - Structuring data for analysis.
+ - Recording relevant metadata (e.g., oscilloscope settings).
 
 HDF5 support is provided by the [h5labview](http://h5labview.sourceforge.net/) library developed by Martijn Jasperse.
 
