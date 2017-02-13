@@ -11,7 +11,7 @@ oskar is a collection of Labview vi's that help with the tasks of (i) systematic
 
 Essentially, oskar is a tool for running experiments. It was designed with a focus on: 
 
- - Hardware extensibility (i.e., it should be reasonably easy to add new control/ DAQ hardware).
+ - Hardware extensibility (it should be reasonably easy to add new control/ DAQ hardware).
  - Structuring data for analysis.
  - Recording relevant metadata (e.g., oscilloscope settings).
 
