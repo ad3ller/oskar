@@ -1,5 +1,5 @@
-oskar
-=======
+oskar_15
+========
 for coordinating and recording experiments with LabVIEW and HDF5
 
 forked for LabVIEW 2015
