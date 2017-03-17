@@ -32,3 +32,13 @@ There are many freely available libraries for importing hdf5 data for analysis, 
 ## Documentation
 
 A guide to oskar is available on the [Wiki](https://github.com/PositroniumSpectroscopy/oskar/wiki "Wiki").
+
+## Changelog
+(since forked from oskar)
+
+- Written in LabVIEW 2015.
+- HDF5 support is achieved using [LIVE HDF5](http://sine.ni.com/nips/cds/view/p/lang/en/nid/212983).
+- Simplified project structure.
+- Data file has been renamed from [RID]_raw.h5 to [RID]_data.h5.
+- Sequence files are saved as json instead of XML.  
+- The sequence-file extension has been changed from _.osq_ to _.jsq_.
