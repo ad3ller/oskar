@@ -19,13 +19,13 @@ Essentially, it is a tool for running experiments. It was designed with a focus 
 
 oskar_15 requires LabVIEW 2015 Full Development Edition.  The DAQ example `fake\_camera.vi' requires the NI Vision Development Module.
 
-- Install [LIVE HDF5](http://www.upvi.net/main/index.php/products/lvhdf5) using the using [JKI VI package manager](http://vipm.jki.net/).
+- Install [LIVE HDF5](http://www.upvi.net/main/index.php/products/lvhdf5) using [JKI VI package manager](http://vipm.jki.net/).  
 - Download and unzip [oskar_15](https://github.com/ad3ller/oskar_15). Open **oskar.lvproj**.
 
 Recommended:
 
- - NI VISA (hardware drivers)
- - [HDFView](https://www.hdfgroup.org/products/java/hdfview/) (for opening and exploring HDF5 files).
+- [OpenG toolkit](http://sine.ni.com/nips/cds/view/p/lang/en/nid/209027).  Oskar uses the OpenG LabVIEW Data Library (part of the OpenG toolkit), however, this is also a dependency of LIVE HDF5 and it should have been installed by JKI package manager already.
+- [HDFView](https://www.hdfgroup.org/products/java/hdfview/) (for opening and exploring HDF5 files).
 
 There are many freely available libraries for importing hdf5 data for analysis, e.g., [h5py](http://www.h5py.org/) for python.
 
