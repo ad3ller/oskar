@@ -4,20 +4,19 @@
 	<Property Name="NI.Lib.SourceVersion" Type="Int">352354304</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">false</Property>
-	<Property Name="NI.SortType" Type="Int">1</Property>
 	<Item Name="date_path_h5.vi" Type="VI" URL="../date_path_h5.vi"/>
 	<Item Name="dialogue.vi" Type="VI" URL="../dialogue.vi"/>
 	<Item Name="error_log.vi" Type="VI" URL="../error_log.vi"/>
 	<Item Name="get_dtype.vi" Type="VI" URL="../get_dtype.vi"/>
 	<Item Name="get_ref.vi" Type="VI" URL="../get_ref.vi"/>
 	<Item Name="get_uvars.vi" Type="VI" URL="../get_uvars.vi"/>
+	<Item Name="jsq_build.vi" Type="VI" URL="../jsq_build.vi"/>
+	<Item Name="jsq_load.vi" Type="VI" URL="../jsq_load.vi"/>
+	<Item Name="jsq_save.vi" Type="VI" URL="../jsq_save.vi"/>
+	<Item Name="jsq_send.vi" Type="VI" URL="../jsq_send.vi"/>
+	<Item Name="jsq_slice.vi" Type="VI" URL="../jsq_slice.vi"/>
 	<Item Name="mod_tag.ctl" Type="VI" URL="../mod_tag.ctl"/>
 	<Item Name="msg_handler.vi" Type="VI" URL="../msg_handler.vi"/>
-	<Item Name="osq_build.vi" Type="VI" URL="../osq_build.vi"/>
-	<Item Name="osq_load.vi" Type="VI" URL="../osq_load.vi"/>
-	<Item Name="osq_save.vi" Type="VI" URL="../osq_save.vi"/>
-	<Item Name="osq_send.vi" Type="VI" URL="../osq_send.vi"/>
-	<Item Name="osq_slice.vi" Type="VI" URL="../osq_slice.vi"/>
 	<Item Name="seq_files.ctl" Type="VI" URL="../seq_files.ctl"/>
 	<Item Name="seq_line.ctl" Type="VI" URL="../seq_line.ctl"/>
 	<Item Name="seq_status.ctl" Type="VI" URL="../seq_status.ctl"/>
