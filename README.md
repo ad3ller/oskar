@@ -2,32 +2,25 @@ oskar_15
 ========
 for coordinating and recording experiments with LabVIEW and HDF5
 
-forked for LabVIEW 2015
+This project was forked from [PositroniumSpectroscopy/oskar](https://github.com/PositroniumSpectroscopy/oskar) and has been adapted for use with LabVIEW 2015 and [LIVE HDF5](http://sine.ni.com/nips/cds/view/p/lang/en/nid/212983).
 ****
 
 @author: Adam Deller
 
 oskar is a collection of Labview vi's that help with the tasks of (i) systematically controlling hardware and (ii) organizing acquired data using [HDF5](https://www.hdfgroup.org/why_hdf/ "https://www.hdfgroup.org/why_hdf/").  
 
-Essentially, oskar is a tool for running experiments. It was designed with a focus on: 
+Essentially, it is a tool for running experiments. It was designed with a focus on:
 
  - Hardware extensibility (it should be reasonably easy to add new control/ DAQ hardware).
  - Structuring data for analysis.
  - Recording relevant metadata (e.g., oscilloscope settings).
 
-HDF5 support is provided by the [h5labview](http://h5labview.sourceforge.net/) library developed by Martijn Jasperse.
-
-## Documentation
-
-A guide to oskar is available on the [Wiki](https://github.com/PositroniumSpectroscopy/oskar/wiki "Wiki").
-
 ## Installation
 
-oskar requires LabVIEW 2015 (or higher) Full Development Edition.  The DAQ example `fake\_camera.vi' requires the NI Vision Development Module.
+oskar_15 requires LabVIEW 2015 Full Development Edition.  The DAQ example `fake\_camera.vi' requires the NI Vision Development Module.
 
-- Install [HDF5](https://www.hdfgroup.org/HDF5/release/obtain5.html). Select 32-bit/ 64-bit version to match LabVIEW install. Reboot.
-- Download the latest version of the [h5labview library](http://h5labview.sourceforge.net/) and install it using the using [JKI VI package manager](http://vipm.jki.net/). 
-- Download and unzip [oskar](https://github.com/PositroniumSpectroscopy/oskar). Open **oskar.lvproj**.
+- Install [LIVE HDF5](http://www.upvi.net/main/index.php/products/lvhdf5) using the using [JKI VI package manager](http://vipm.jki.net/).
+- Download and unzip [oskar_15](https://github.com/ad3ller/oskar_15). Open **oskar.lvproj**.
 
 Recommended:
 
@@ -35,3 +28,7 @@ Recommended:
  - [HDFView](https://www.hdfgroup.org/products/java/hdfview/) (for opening and exploring HDF5 files).
 
 There are many freely available libraries for importing hdf5 data for analysis, e.g., [h5py](http://www.h5py.org/) for python.
+
+## Documentation
+
+A guide to oskar is available on the [Wiki](https://github.com/PositroniumSpectroscopy/oskar/wiki "Wiki").
