@@ -10,6 +10,7 @@
 	<Item Name="get_dtype.vi" Type="VI" URL="../get_dtype.vi"/>
 	<Item Name="get_ref.vi" Type="VI" URL="../get_ref.vi"/>
 	<Item Name="get_uvars.vi" Type="VI" URL="../get_uvars.vi"/>
+	<Item Name="Global.vi" Type="VI" URL="../../Global.vi"/>
 	<Item Name="jsq_build.vi" Type="VI" URL="../jsq_build.vi"/>
 	<Item Name="jsq_load.vi" Type="VI" URL="../jsq_load.vi"/>
 	<Item Name="jsq_save.vi" Type="VI" URL="../jsq_save.vi"/>

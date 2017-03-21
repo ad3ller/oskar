@@ -55,7 +55,6 @@
 			<Item Name="PAUSE.vi" Type="VI" URL="../VAR/PAUSE.vi"/>
 			<Item Name="PAUSE_RAND.vi" Type="VI" URL="../VAR/PAUSE_RAND.vi"/>
 		</Item>
-		<Item Name="Global.vi" Type="VI" URL="../Global.vi"/>
 		<Item Name="oskar_tools.lvlib" Type="Library" URL="../oskar_tools/oskar_tools.lvlib"/>
 		<Item Name="Sequencer.vi" Type="VI" URL="../Sequencer.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
