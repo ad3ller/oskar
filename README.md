@@ -2,7 +2,7 @@ oskar_15
 ========
 for coordinating and recording experiments with LabVIEW and HDF5
 
-This project was forked from [PositroniumSpectroscopy/oskar](https://github.com/PositroniumSpectroscopy/oskar) and has been adapted for use with LabVIEW 2015 and [LIVE HDF5](http://sine.ni.com/nips/cds/view/p/lang/en/nid/212983).
+This project was forked from [PositroniumSpectroscopy/oskar](https://github.com/PositroniumSpectroscopy/oskar).
 ****
 
 @author: Adam Deller
