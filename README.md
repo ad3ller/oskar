@@ -24,7 +24,6 @@ oskar_15 requires LabVIEW 2015 Full Development Edition.  The DAQ example `fake\
 
 Recommended:
 
-- [OpenG toolkit](http://sine.ni.com/nips/cds/view/p/lang/en/nid/209027).  Oskar uses the OpenG LabVIEW Data Library (part of the OpenG toolkit), however, this is also a dependency of LIVE HDF5 and it should have been installed by JKI package manager already.
 - [HDFView](https://www.hdfgroup.org/products/java/hdfview/) (for opening and exploring HDF5 files).
 
 There are many freely available libraries for importing hdf5 data for analysis, e.g., [h5py](http://www.h5py.org/) for python.
