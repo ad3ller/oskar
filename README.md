@@ -2,12 +2,13 @@ oskar_15
 ========
 for coordinating and recording experiments with LabVIEW and HDF5
 
-This project was forked from [PositroniumSpectroscopy/oskar](https://github.com/PositroniumSpectroscopy/oskar) and has been adapted for use with LabVIEW 2015 and [LIVE HDF5](http://sine.ni.com/nips/cds/view/p/lang/en/nid/212983).
 ****
 
 @author: Adam Deller
 
-oskar is a collection of Labview vi's that help with the tasks of (i) systematically controlling hardware and (ii) organizing acquired data using [HDF5](https://www.hdfgroup.org/why_hdf/ "https://www.hdfgroup.org/why_hdf/").  
+This project was forked from [PositroniumSpectroscopy/oskar](https://github.com/PositroniumSpectroscopy/oskar).
+
+oskar_15 is a collection of Labview vi's that help with the tasks of (i) systematically controlling hardware and (ii) organizing acquired data using [HDF5](https://www.hdfgroup.org/why_hdf/ "https://www.hdfgroup.org/why_hdf/").  
 
 Essentially, it is a tool for running experiments. It was designed with a focus on:
 
@@ -24,14 +25,13 @@ oskar_15 requires LabVIEW 2015 Full Development Edition.  The DAQ example `fake\
 
 Recommended:
 
-- [OpenG toolkit](http://sine.ni.com/nips/cds/view/p/lang/en/nid/209027).  Oskar uses the OpenG LabVIEW Data Library (part of the OpenG toolkit), however, this is also a dependency of LIVE HDF5 and it should have been installed by JKI package manager already.
 - [HDFView](https://www.hdfgroup.org/products/java/hdfview/) (for opening and exploring HDF5 files).
 
 There are many freely available libraries for importing hdf5 data for analysis, e.g., [h5py](http://www.h5py.org/) for python.
 
 ## Documentation
 
-A guide to oskar is available on the [Wiki](https://github.com/PositroniumSpectroscopy/oskar/wiki "Wiki").
+A guide to oskar is available on the [Wiki](https://github.com/ad3ller/oskar_15/wiki "Wiki").
 
 ## Changelog
 (since forked from oskar)
