@@ -16,6 +16,7 @@
 	<Item Name="jsq_save.vi" Type="VI" URL="../jsq_save.vi"/>
 	<Item Name="jsq_send.vi" Type="VI" URL="../jsq_send.vi"/>
 	<Item Name="jsq_slice.vi" Type="VI" URL="../jsq_slice.vi"/>
+	<Item Name="jsq_test.vi" Type="VI" URL="../jsq_test.vi"/>
 	<Item Name="mod_tag.ctl" Type="VI" URL="../mod_tag.ctl"/>
 	<Item Name="msg_handler.vi" Type="VI" URL="../msg_handler.vi"/>
 	<Item Name="seq_files.ctl" Type="VI" URL="../seq_files.ctl"/>

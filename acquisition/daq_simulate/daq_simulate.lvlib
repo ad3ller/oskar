@@ -5,6 +5,8 @@
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Item Name="random_array_1D.vi" Type="VI" URL="../random_array_1D.vi"/>
 	<Item Name="random_array_2D.vi" Type="VI" URL="../random_array_2D.vi"/>
+	<Item Name="sim_pmt.vi" Type="VI" URL="../sim_pmt.vi"/>
 	<Item Name="sim_scope.vi" Type="VI" URL="../sim_scope.vi"/>
+	<Item Name="sim_scope_2.vi" Type="VI" URL="../sim_scope_2.vi"/>
 	<Item Name="sine_array.vi" Type="VI" URL="../sine_array.vi"/>
 </Library>

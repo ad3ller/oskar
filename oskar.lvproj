@@ -42,7 +42,7 @@
 			<Item Name="LICENSE.txt" Type="Document" URL="../LICENSE.txt"/>
 			<Item Name="README.md" Type="Document" URL="../README.md"/>
 			<Item Name="Wiki" Type="Hyperlink">
-				<Property Name="NI.Address" Type="Str">https://github.com/PositroniumSpectroscopy/oskar/wiki</Property>
+				<Property Name="NI.Address" Type="Str">https://github.com/ad3ller/oskar_15/wiki</Property>
 			</Item>
 		</Item>
 		<Item Name="REC" Type="Folder">
