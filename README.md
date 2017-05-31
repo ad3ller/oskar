@@ -31,7 +31,7 @@ There are many freely available libraries for importing hdf5 data for analysis, 
 
 ## Documentation
 
-A guide to oskar is available on the [Wiki](https://github.com/ad3ller/oskar_15/wiki "Wiki").
+A guide to oskar is available on the [Wiki](https://github.com/ad3ller/oskar_15/wiki "Wiki"). Example videos can be found in the media directory.
 
 ## Changelog
 (since forked from oskar)
