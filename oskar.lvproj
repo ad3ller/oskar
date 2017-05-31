@@ -15,18 +15,9 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="acquisition" Type="Folder">
-			<Item Name="camera" Type="Folder">
-				<Item Name="cam_acquire.vi" Type="VI" URL="../acquisition/fake_camera/cam_acquire.vi"/>
-				<Item Name="h5_cam_save.vi" Type="VI" URL="../acquisition/fake_camera/h5_cam_save.vi"/>
-			</Item>
-			<Item Name="oscilloscope" Type="Folder">
-				<Item Name="h5_osc_save.vi" Type="VI" URL="../acquisition/fake_oscilloscope/h5_osc_save.vi"/>
-				<Item Name="h5_osc_stats_save.vi" Type="VI" URL="../acquisition/fake_oscilloscope/h5_osc_stats_save.vi"/>
-				<Item Name="osc_acquire.vi" Type="VI" URL="../acquisition/fake_oscilloscope/osc_acquire.vi"/>
-				<Item Name="osc_channel.ctl" Type="VI" URL="../acquisition/fake_oscilloscope/osc_channel.ctl"/>
-				<Item Name="osc_stats.ctl" Type="VI" URL="../acquisition/fake_oscilloscope/osc_stats.ctl"/>
-			</Item>
-			<Item Name="daq_simulate.lvlib" Type="Library" URL="../acquisition/daq_simulate/daq_simulate.lvlib"/>
+			<Property Name="NI.SortType" Type="Int">3</Property>
+			<Item Name="camera.lvlib" Type="Library" URL="../acquisition/fake_camera/camera.lvlib"/>
+			<Item Name="oscilloscope.lvlib" Type="Library" URL="../acquisition/fake_oscilloscope/oscilloscope.lvlib"/>
 		</Item>
 		<Item Name="build sequence" Type="Folder">
 			<Item Name="Append.vi" Type="VI" URL="../build sequence/Append.vi"/>
