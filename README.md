@@ -1,4 +1,4 @@
-oskar_15
+OSKAR
 ========
 for coordinating and recording experiments with LabVIEW and HDF5
 
@@ -8,7 +8,7 @@ for coordinating and recording experiments with LabVIEW and HDF5
 
 This project was forked from [PositroniumSpectroscopy/oskar](https://github.com/PositroniumSpectroscopy/oskar).
 
-oskar_15 is a collection of Labview vi's that help with the tasks of (i) systematically controlling hardware and (ii) organizing acquired data using [HDF5](https://www.hdfgroup.org/why_hdf/ "https://www.hdfgroup.org/why_hdf/").  
+oskar is a collection of Labview vi's that help with the tasks of (i) systematically controlling hardware and (ii) organizing acquired data using [HDF5](https://www.hdfgroup.org/why_hdf/ "https://www.hdfgroup.org/why_hdf/").  
 
 Essentially, it is a tool for running experiments. It was designed with a focus on:
 
@@ -18,7 +18,7 @@ Essentially, it is a tool for running experiments. It was designed with a focus 
 
 ## Installation
 
-oskar_15 requires LabVIEW 2015 Full Development Edition.  The DAQ example `fake\_camera.vi' requires the NI Vision Development Module.
+oskar requires LabVIEW 2015 Full Development Edition.  The DAQ example `fake\_camera.vi' requires the NI Vision Development Module.
 
 - Install [LIVE HDF5](http://www.upvi.net/main/index.php/products/lvhdf5) using [JKI VI package manager](http://vipm.jki.net/).  
 - Download and unzip [oskar_15](https://github.com/ad3ller/oskar_15). Open **oskar.lvproj**.
@@ -34,7 +34,7 @@ There are many freely available libraries for importing hdf5 data for analysis, 
 A guide to oskar is available on the [Wiki](https://github.com/ad3ller/oskar_15/wiki "Wiki"). Example videos can be found in the media directory.
 
 ## Changelog
-(since forked from oskar)
+(since forked from [PositroniumSpectroscopy/oskar](https://github.com/PositroniumSpectroscopy/oskar))
 
 - Written in LabVIEW 2015.
 - HDF5 support is achieved using [LIVE HDF5](http://sine.ni.com/nips/cds/view/p/lang/en/nid/212983).
