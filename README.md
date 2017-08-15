@@ -21,7 +21,7 @@ Essentially, it is a tool for running experiments. It was designed with a focus 
 oskar requires LabVIEW 2015 Full Development Edition.  The DAQ example `fake\_camera.vi' requires the NI Vision Development Module.
 
 - Install [LIVE HDF5](http://www.upvi.net/main/index.php/products/lvhdf5) using [JKI VI package manager](http://vipm.jki.net/).  
-- Download and unzip [oskar_15](https://github.com/ad3ller/oskar_15). Open **oskar.lvproj**.
+- Download and unzip [oskar](https://github.com/ad3ller/oskar). Open **oskar.lvproj**.
 
 Recommended:
 
