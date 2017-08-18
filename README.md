@@ -12,7 +12,7 @@ oskar is a collection of Labview vi's that help with the tasks of (i) systematic
 
 Essentially, it is a tool for running experiments. It was designed with a focus on:
 
- - Hardware extensibility (it should be reasonably easy to add new control/ DAQ hardware).
+ - Hardware extensibility (it should be reasonably easy to add new control/ data-aquisition hardware).
  - Structuring data for analysis.
  - Recording relevant metadata (e.g., oscilloscope settings).
 
@@ -20,7 +20,7 @@ Essentially, it is a tool for running experiments. It was designed with a focus 
 
 oskar requires LabVIEW 2015 Full Development Edition.  The DAQ example `fake\_camera.vi' requires the NI Vision Development Module.
 
-- Install [LIVE HDF5](http://www.upvi.net/main/index.php/products/lvhdf5) using [JKI VI package manager](http://vipm.jki.net/).  
+- Install [OpenG Toolkit](http://sine.ni.com/nips/cds/view/p/lang/en/nid/209027), [JKI JSON](http://jki.net/tools), and [LIVE HDF5](http://www.upvi.net/main/index.php/products/lvhdf5) using [JKI VI package manager](http://vipm.jki.net/).  
 - Download and unzip [oskar](https://github.com/ad3ller/oskar). Open **oskar.lvproj**.
 
 Recommended:

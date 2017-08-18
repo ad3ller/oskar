@@ -12,6 +12,8 @@
 	<Item Name="get_uvars.vi" Type="VI" URL="../get_uvars.vi"/>
 	<Item Name="Global.vi" Type="VI" URL="../../Global.vi"/>
 	<Item Name="jsq_build.vi" Type="VI" URL="../jsq_build.vi"/>
+	<Item Name="jsq_decode.vi" Type="VI" URL="../jsq_decode.vi"/>
+	<Item Name="jsq_encode.vi" Type="VI" URL="../jsq_encode.vi"/>
 	<Item Name="jsq_load.vi" Type="VI" URL="../jsq_load.vi"/>
 	<Item Name="jsq_save.vi" Type="VI" URL="../jsq_save.vi"/>
 	<Item Name="jsq_send.vi" Type="VI" URL="../jsq_send.vi"/>
@@ -27,6 +29,7 @@
 	<Item Name="shuffle_dbl.vi" Type="VI" URL="../shuffle_dbl.vi"/>
 	<Item Name="shuffle_seq.vi" Type="VI" URL="../shuffle_seq.vi"/>
 	<Item Name="shuffle_string.vi" Type="VI" URL="../shuffle_string.vi"/>
+	<Item Name="strip_whitespace.vi" Type="VI" URL="../strip_whitespace.vi"/>
 	<Item Name="unique_history.vi" Type="VI" URL="../unique_history.vi"/>
 	<Item Name="var_to_string.vi" Type="VI" URL="../var_to_string.vi"/>
 	<Item Name="vars.ctl" Type="VI" URL="../vars.ctl"/>
