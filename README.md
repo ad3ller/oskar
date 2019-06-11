@@ -29,6 +29,8 @@ Recommended:
 
 There are many freely available libraries for importing hdf5 data for analysis, e.g., [h5py](http://www.h5py.org/) for python.
 
+[e11_analysis](https://github.com/ad3ller/e11_analysis) is a python library for processing oskar data files.
+
 ## Documentation
 
 A guide to oskar is available on the [Wiki](https://github.com/ad3ller/oskar_15/wiki "Wiki"). 
